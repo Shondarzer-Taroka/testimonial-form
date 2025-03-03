@@ -1,11 +1,14 @@
+
+
 import HomPage from "./pages/HomPage"
 
 function App() {
 
   return (
     <>
-     <HomPage/>
-     
+
+      <HomPage />
+      {/* <CardModal/> */}
     </>
   )
 }

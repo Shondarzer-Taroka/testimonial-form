@@ -1,10 +1,12 @@
 
-import TestimonialForm from '../components/TestimonialForm';
+import TestimonialCard from '../components/TestimonialCard';
+
 
 const HomPage = () => {
     return (
         <div>
-            <TestimonialForm/>
+            {/* <TestimonialForm/> */}
+            <TestimonialCard/>
         </div>
     );
 };
