@@ -14,6 +14,7 @@ interface Testimonial {
   dateOfTravel: string;
   favouriteExperience: string;
   suggestions: string;
+  mediaType: string
 }
 
 // Define the props for the TravelCard component
@@ -43,7 +44,7 @@ const TravelCard = ({ testimonial }: TravelCardProps) => {
         <Rating name="read-only" value={4} readOnly />
       </div>
       <Carousel className="w-full max-w-md mt-4">
-        <CarouselContent>
+        {testimonial.mediaType === 'Photos' ? <CarouselContent>
           {testimonial?.mediaUrls?.map((value, index) => (
             <CarouselItem key={index} className="basis-1/3">
               <div className="p-1">
@@ -52,10 +53,30 @@ const TravelCard = ({ testimonial }: TravelCardProps) => {
                   alt="Dubai View"
                   className="w-32 h-32 rounded-lg"
                 />
+
+
               </div>
             </CarouselItem>
           ))}
         </CarouselContent>
+          :
+          <CarouselContent>
+            {testimonial?.mediaUrls?.map((value, index) => (
+              <CarouselItem key={index} className="basis-1/3">
+                <div className="p-1">
+                  :
+
+                  <video src={value} controls className="w-32 h-32 rounded-lg">
+                    Your browser does not support the video tag.
+                  </video>
+
+
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+
+        }
       </Carousel>
       <p className="mt-4 font-semibold">Suggestions for future traveler(s) :</p>
       <TextField

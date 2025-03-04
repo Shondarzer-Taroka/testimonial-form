@@ -18,6 +18,7 @@ interface Filter {
   language: string;
   rating: string;
   duration: string;
+
 }
 
 // Define the type for the testimonial object
@@ -30,6 +31,7 @@ interface Testimonial {
   suggestions: string;
   testimonial: string;
   rating: number;
+  mediaType:string;
 }
 
 // Define the type for the API response
@@ -61,7 +63,7 @@ const TestimonialCard = () => {
   useEffect(() => {
     const fetchTestimonials = async () => {
       try {
-        const { data } = await axios.get<ApiResponse>("https://mn-pearl.vercel.app/api/testimonials", {
+        const { data } = await axios.get<ApiResponse>("https://testimonialfrontend.vercel.app/api/testimonials", {
           params: {
             page,
             limit: 9,

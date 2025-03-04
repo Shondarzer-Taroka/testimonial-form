@@ -16,6 +16,7 @@ interface Testimonial {
   suggestions: string;
   testimonial: string;
   rating: number;
+  mediaType:string
 }
 
 // Define the props for the TCard component

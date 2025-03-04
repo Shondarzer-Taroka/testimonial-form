@@ -82,7 +82,7 @@ const TestimonialForm = () => {
     formData.append('suggestions', suggestions);
 
     try {
-      const response = await axios.post('https://mn-pearl.vercel.app/api/testimonials', formData, {
+      const response = await axios.post('https://testimonialfrontend.vercel.app/api/testimonials', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       console.log('Testimonial created:', response.data);
